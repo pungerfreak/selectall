@@ -1,5 +1,5 @@
 /*
- * jQuery selectAll v0.1 - jQuery plugin
+ * jQuery selectAll v0.2 - jQuery plugin
  * Copyright (c) 2010-2012 Daniel Greenlaw
  *
  * Dual licensed under the MIT and GPL licenses:
@@ -18,10 +18,12 @@
       $$.find('input[type=checkbox][rel='+options.controller+']').each(function() {
         var controller = $(this);
         var controllees = $$
-          .find('input[type=checkbox][rel!='+options.controller+'].'+controller.attr('class'));
+          .find('input[type=checkbox][rel!='+options.controller+'].'+controller.attr('class'))
+          .not(':disabled');
 
         controller.click(function(e) {
-          controllees.attr('checked', controller.attr('checked'));
+          var checked = typeof(controller.attr('checked'))!=undefined && controller.attr('checked')=='checked'
+          controllees.attr('checked', checked);
         });
 
         controllees.click(function(e) {
