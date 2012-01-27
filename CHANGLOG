@@ -1,0 +1,4 @@
+Version 0.1 - January 27, 2012
+===================================================================================================
+* Initial release provides basic ability to select/deselect all associated record-selection checkboxes with a single click.
+* Allows for an optional 'controller' to be defined (defaults to 'select_all') and assigned to the rel attribute of the controlling checkbox.
